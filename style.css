@@ -1,91 +1,191 @@
-/* style.css */
-padding: 10px 20px;
-font-weight: bold;
-cursor: pointer;
-border-radius: 5px;
+/* Style global */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
+/* ====== Navbar ====== */
+.navbar {
+  position: fixed; /* reste en haut même en scrollant */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  color: #003366;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
 
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.company-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.donate-btn {
+  background-color: #f9c300;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ====== Section hero en plein écran ====== */
 .hero {
-display: flex;
-flex-wrap: wrap;
-background-color: #003366;
-color: white;
-padding: 50px 30px;
-align-items: center;
-justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #003366;
+  color: white;
+  padding: 50px 30px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding-top: 100px; /* espace sous la navbar */
 }
 
-
+/* Texte hero */
 .hero-text {
-flex: 1 1 45%;
-max-width: 500px;
+  flex: 1 1 45%;
+  max-width: 600px;
 }
-
 
 .hero-text h2 {
-font-size: 40px;
-margin-bottom: 20px;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
-
 
 .hero-text p {
-font-size: 16px;
-line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
-
+/* Zone de don */
 .donation-box {
-margin-top: 20px;
-display: flex;
-align-items: center;
+  margin-top: 20px;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  max-width: 500px;
 }
-
 
 .donation-box input[type="text"] {
-padding: 10px;
-flex: 1;
-border: 1px solid #ccc;
-border-radius: 5px 0 0 5px;
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  font-size: 1rem;
+  padding: 0 12px;
+  height: 48px;
+  box-sizing: border-box;
 }
 
+.donation-box input::placeholder {
+  color: #666;
+  font-size: 0.95rem;
+  font-style: italic;
+  white-space: normal;
+  line-height: 1.4;
+}
 
 .donation-box button {
-padding: 11px 20px;
-border: none;
-background-color: #f9c300;
-font-weight: bold;
-cursor: pointer;
-border-radius: 0 5px 5px 0;
+  background-color: #f9c300;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 20px;
+  height: 48px;
+  box-sizing: border-box;
 }
 
-
+/* Image hero */
 .hero-image {
-flex: 1 1 45%;
-text-align: center;
+  flex: 1 1 45%;
+  text-align: center;
 }
-
 
 .hero-image img {
-max-width: 100%;
-border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
+/* ====== Responsive tablette ====== */
+@media (max-width: 1024px) {
+  .hero-text h2 {
+    font-size: 2rem;
+  }
+}
 
+/* ====== Responsive mobile ====== */
 @media (max-width: 768px) {
-.hero {
-flex-direction: column;
-text-align: center;
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 20px 30px;
+  }
+
+  .hero-text,
+  .hero-image {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .hero-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .donation-box {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .donation-box input[type="text"],
+  .donation-box button {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 48px;
+  }
 }
 
+/* ====== Très petit écran ====== */
+@media (max-width: 480px) {
+  .hero {
+    padding: 90px 15px 20px;
+  }
 
-.hero-text, .hero-image {
-flex: 1 1 100%;
-max-width: 100%;
-}
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
 
+  .hero-text p {
+    font-size: 0.9rem;
+  }
 
-.hero-text h2 {
-font-size: 28px;
-}
+  .donation-box input::placeholder {
+    font-size: 0.85rem;
+  }
 }
