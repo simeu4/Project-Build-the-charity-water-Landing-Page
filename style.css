@@ -1,0 +1,67 @@
+/* styles.css */
+.hero-text h2 {
+font-size: 40px;
+margin-bottom: 20px;
+}
+
+
+.hero-text p {
+font-size: 16px;
+line-height: 1.5;
+}
+
+
+.donation-box {
+margin-top: 20px;
+display: flex;
+align-items: center;
+}
+
+
+.donation-box input[type="text"] {
+padding: 10px;
+flex: 1;
+border: 1px solid #ccc;
+border-radius: 5px 0 0 5px;
+}
+
+
+.donation-box button {
+padding: 11px 20px;
+border: none;
+background-color: #f9c300;
+font-weight: bold;
+cursor: pointer;
+border-radius: 0 5px 5px 0;
+}
+
+
+.hero-image {
+flex: 1 1 45%;
+text-align: center;
+}
+
+
+.hero-image img {
+max-width: 100%;
+border-radius: 10px;
+}
+
+
+@media (max-width: 768px) {
+.hero {
+flex-direction: column;
+text-align: center;
+}
+
+
+.hero-text, .hero-image {
+flex: 1 1 100%;
+max-width: 100%;
+}
+
+
+.hero-text h2 {
+font-size: 28px;
+}
+}
