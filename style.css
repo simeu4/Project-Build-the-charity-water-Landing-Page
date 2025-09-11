@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6, .company-name {
 
 /* ====== Navbar ====== */
 .navbar {
-  position: fixed; /* reste en haut même en scrollant */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5, h6, .company-name {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px; /* 👈 barre plus large */
+  padding: 20px 50px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   z-index: 1000;
 }
@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6, .company-name {
 }
 
 .logo {
-  width: 50px;  /* logo plus grand */
+  width: 50px;
   height: 50px;
   border-radius: 50%;
 }
@@ -49,11 +49,11 @@ h1, h2, h3, h4, h5, h6, .company-name {
   background-color: #f9c300;
   border: none;
   border-radius: 8px;
-  padding: 14px 28px; /* 👈 bouton plus grand */
+  padding: 20px 100px;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  margin-left: -20px; /* 👈 décale le bouton vers la gauche */
+  margin-left: -270px;
 }
 
 /* ====== Section hero en plein écran ====== */
@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6, .company-name {
   gap: 20px;
   min-height: 100vh;
   box-sizing: border-box;
-  padding-top: 140px; /* espace sous la navbar agrandie */
+  padding-top: 140px;
 }
 
 /* Texte hero */
@@ -126,16 +126,23 @@ h1, h2, h3, h4, h5, h6, .company-name {
 }
 
 /* Image hero */
+/* Image hero */
 .hero-image {
-  flex: 1 1 55%; /* 👈 photo plus large */
-  text-align: center;
+  flex: 1 1 55%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 👈 place l’image vers le haut */
+  margin-top: -20px; /* 👈 décale un peu plus haut */
 }
 
 .hero-image img {
-  max-width: 100%;
+  width: 90%;
   height: auto;
-  border-radius: 12px; /* légèrement plus arrondi */
+  max-height: 60vh; /* ajustée pour libérer de la place en dessous */
+  object-fit: cover;
+  border-radius: 12px;
 }
+
 
 /* ====== Responsive tablette ====== */
 @media (max-width: 1024px) {
@@ -180,6 +187,11 @@ h1, h2, h3, h4, h5, h6, .company-name {
     margin-top: 10px;
     height: 48px;
   }
+
+  .hero-image img {
+    width: 100%;
+    max-height: 50vh;
+  }
 }
 
 /* ====== Très petit écran ====== */
@@ -200,4 +212,3 @@ h1, h2, h3, h4, h5, h6, .company-name {
     font-size: 0.85rem;
   }
 }
-
